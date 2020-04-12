@@ -1,0 +1,7 @@
+---
+- name: restart earlyoom
+  service:
+    name: "{{ earlyoom_service_name }}"
+    state: restarted
+  when: earlyoom_service_enabled or
+        earlyoom_service_state in ["started", "restarted"]
