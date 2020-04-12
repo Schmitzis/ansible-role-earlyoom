@@ -3,7 +3,7 @@ dependencies: []
 
 galaxy_info:
   author: Aisbergg
-  description: Install and configure EarlyOOM on Linux systems.
+  description: Install and configure the Early OOM Daemon on Linux systems.
   company: none
   issue_tracker_url: https://github.com/Aisbergg/ansible-role-earlyoom/issues
   license: MIT
