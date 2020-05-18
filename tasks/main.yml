@@ -1,26 +1,25 @@
 ---
 - name: Install EarlyOOM
-  tags: earlyoom
+  tags: [earlyoom, earlyoom_install]
   package:
-    name: "{{ earlyoom_dependencies }}"
+    name: "{{ __earlyoom_dependencies }}"
     state: present
 
 - name: Configure EarlyOOM
-  tags: earlyoom
+  tags: [earlyoom, earlyoom_config]
   template:
     src: earlyoom.j2
-    dest: "{{ earlyoom_config_file }}"
+    dest: "{{ __earlyoom_config_file }}"
     owner: root
     group: root
-    mode: "0644"
-    lstrip_blocks: true
+    mode: 0644
   notify: restart earlyoom
   vars:
-    cfg: "{{ earlyoom_config_defaults | combine(earlyoom_config) }}"
+    cfg: "{{ __earlyoom_config_defaults | combine(earlyoom_config) }}"
 
 - name: Manage EarlyOOM service
-  tags: earlyoom
+  tags: [earlyoom, earlyoom_service]
   service:
-    name: "{{ earlyoom_service_name }}"
+    name: "{{ __earlyoom_service_name }}"
     state: "{{ earlyoom_service_state }}"
     enabled: "{{ earlyoom_service_enabled }}"

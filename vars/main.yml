@@ -2,15 +2,15 @@
 # defaults
 
 # dependencies
-earlyoom_dependencies: 
+__earlyoom_dependencies:
   - earlyoom
 
 # service
-earlyoom_service_name: earlyoom
+__earlyoom_service_name: earlyoom
 
 # configuration
-earlyoom_config_file: /etc/default/earlyoom
-earlyoom_config_defaults:
+__earlyoom_config_file: /etc/default/earlyoom
+__earlyoom_config_defaults:
   minimum_memory_percent: 5
   memory_report_interval: 0
   ignore_positive_oom_score_adj_values: false
