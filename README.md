@@ -12,6 +12,7 @@ None.
 |----------|---------|----------|
 | `earlyoom_service_state` | `started` | Set the service state (Possible values: started, restarted, stopped) |
 | `earlyoom_service_enabled` | `true` | Enable/Disable the Early OOM Daemon. |
+| `earlyoom_service_restart_on_change` | `true` | Restart Early OOM daemon service on configuration changes. |
 | `earlyoom_config` | `{}` | Configuration options for the Early OOM Daemon. |
 | `earlyoom_config.minimum_memory_percent` | `5` | (PERCENT[,KILL_PERCENT]) If the available memory is below this threshold earlyoom will send a SIGTERM, then a SIGKILL once below KILL_PERCENT(default PERCENT/2). |
 | `earlyoom_config.minimum_memory_size` |  | (SIZE[,KILL_SIZE]) Set available memory minimum to SIZE KiB. |
