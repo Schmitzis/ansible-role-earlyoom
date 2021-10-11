@@ -5,9 +5,9 @@
 
 # Options to pass to earlyoom
 EARLYOOM_ARGS="
-    {{- '-M ' ~ cfg.minimum_memory_size ~ ' ' if minimum_memory_size is defined else 
+    {{- '-M ' ~ cfg.minimum_memory_size ~ ' ' if minimum_memory_size is defined else
         '-m ' ~ cfg.minimum_memory_percent ~ ' ' }}
-    {{- '-S ' ~ cfg.minimum_swap_size ~ ' ' if minimum_swap_size is defined else 
+    {{- '-S ' ~ cfg.minimum_swap_size ~ ' ' if minimum_swap_size is defined else
         '-s ' ~ cfg.minimum_swap_percent ~ ' ' if cfg.minimum_swap_percent is defined else '' }}
     {{- '-i ' if cfg.ignore_positive_oom_score_adj_values else '' }}
     {{- '-n ' if cfg.notify_send_enabled else '' }}
